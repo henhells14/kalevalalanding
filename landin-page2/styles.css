@@ -1,0 +1,85 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Videon tyyli */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Sisällön tyyli videon päällä */
+.content {
+    position: relative, center;
+    z-index: 1;
+    color: rgb(253, 253, 253);
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+}
+
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    padding: 10px 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(137, 43, 226, 0.437);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3 ease;
+}
+
+/* Napin hover-efekti */
+#start-button:hover {
+    background-color: #be2f6151; /* Tummempi sininen hover-tilassa */
+}
+
+.popcorn {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background: url('popcorn.png') no-repeat center center;
+    background-size: cover;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+   
+}
+.popcorn {
+    /* ... muut tyylit ... */
+    animation: float 3s ease-in-out infinite, fadeOut 2s ease-in-out 8s forwards;
+}
